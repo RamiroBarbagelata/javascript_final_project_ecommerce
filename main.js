@@ -1,6 +1,15 @@
-alert('Bienvenido a Cara Sur - Casa de Té');
+//Inicio de compra
 
+function starShopping(){
+    const option = prompt('Bienvenido, ¿deseas comer o tomar algo?\n1) Si\n2) No');
+    if(option == "1") {
+        return true;
+    }else {
+        alert('Te esperamos la próxima vez');
+    }
+};
 
+starShopping();
 
 //Array vacio - carrito
 const cart = [];
@@ -62,7 +71,7 @@ document.write(collector);
 
 
 
-//Función para eliminar los productos del carrito
+//Función para agregar los productos del carrito
 
 function addingToCart(idProduct) {
     const indexFound = products.findIndex(products => products.id == idProduct);
@@ -72,17 +81,42 @@ function addingToCart(idProduct) {
     console.log(cart); 
     //mostrar el total de la compra
     const totalCart = cart.reduce((collector, products) => collector + products.price, 0);
-    console.log(`Ustedes tiene que pagar $${totalCart}.-`);
+    console.log(`El total a pagar es $${totalCart}.-`);
+    const continueShopping = prompt(`Hasta el momento el TOTAL de tu compra es $${totalCart}.-\n ¿Continuás tu pedido??\n1) Si\n2) No`)
+    if (continueShopping == "1") {
+        return true
+    }else {
+        alert('Gracias, disfrutá de tus delicatessen');
+    }
+    
 }
 
+//Función para eliminar los productos del carrito
 
 function deleteProductCart(idProduct2) {
-    const indexFound2 = products.findIndex(products => products.id === idProduct2);
+    const indexFound2 = cart.findIndex(products => products.id === idProduct2);
     cart.splice(indexFound2,1);
     console.log('Hay '+ cart.length + ' delicatessen en tu carrito');
     console.log(cart);
+    const totalCart = cart.reduce((collector, products) => collector + products.price, 0);
+    console.log(`El total a pagar es $${totalCart}.-`);
+    const continueShopping = prompt(`Hasta el momento el TOTAL de tu compra es $${totalCart}.-\n ¿Continuás tu pedido??\n1) Si\n2) No`)
+    if (continueShopping == "1") {
+        return true
+    }else {
+        alert('Gracias, disfrutá de tus delicatessen');
+    }
+    
 }
 
+function checkout(){
+    const endPurchase = prompt('¿Deseas finaliza su compra?\n1) Si\n2) No');
+    if(endPurchase == "1") {
+        alert('Gracias, disfrutá de tus delicatessen');
+    }else {
+        alert('Continuá con tu compra por favor');
+    }
+};
 
 
 
