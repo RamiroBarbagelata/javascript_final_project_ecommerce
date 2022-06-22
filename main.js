@@ -1,3 +1,6 @@
+alert('Bienvenido a Cara Sur - Casa de Té');
+
+
 
 //Array vacio - carrito
 const cart = [];
@@ -42,25 +45,54 @@ const products = [
 ];
 
 
+
+
+
 //Visualizacion de HTML - acumulador
 let collector = ``;
 for (let i = 0; i < products.length; i++){
     collector += `<div>
         ${products[i].description} <br> ${products[i].size} <br> $${products[i].price}<br>
         <button onclick = "addingToCart(${products[i].id})">Agregar</button>
+        <button onclick = "deleteProductCart(${products[i].id})">Quitar</button>
     </div>`;
 };
 
 document.write(collector);
 
 
-//Función que agrega los productos en el carrito
-function addingToCart(idProduct){
-    console.log(idProduct)
-    cart.push(idProduct);
-    console.log('Hay ' + cart.length + ' delicatessen en tu carrito');
-    console.log(cart)
-};
+
+//Función para eliminar los productos del carrito
+
+function addingToCart(idProduct) {
+    const indexFound = products.findIndex(products => products.id == idProduct);
+    console.log(indexFound);
+    cart.push(products[indexFound]);
+    console.log('Hay '+ cart.length + ' delicatessen en tu carrito');
+    console.log(cart); 
+    //mostrar el total de la compra
+    const totalCart = cart.reduce((collector, products) => collector + products.price, 0);
+    console.log(`Ustedes tiene que pagar $${totalCart}.-`);
+}
+
+
+function deleteProductCart(idProduct2) {
+    const indexFound2 = products.findIndex(products => products.id === idProduct2);
+    cart.splice(indexFound2,1);
+    console.log('Hay '+ cart.length + ' delicatessen en tu carrito');
+    console.log(cart);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
