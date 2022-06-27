@@ -4,26 +4,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa de Té</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,200;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Cara Sur Casa de Té</title>
-    <script src="./main.js"></script>
+    <script defer src="./main.js"></script>
 </head>
 <body>
-    <!-- <header>
-        <h1>Cara Sur Casa de Té</h1>
-    
-        <nav class="navbar">
-            <a href="#home">Inicio</a>
-            <a href="#products">Productos</a>
-            <a href="#about">Nosotros</a>
-            <a href="#contact">Contacto</a>
-        </nav>
-    </header> -->
+    <!-- Navbar Section  -->
+    <nav class="navbar">
+        <a href="#" class="logo">Cara Sur</a>
 
-    <button onclick="checkout()">Finalizar Compra</button>
+        <ul class="menu">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Nosotros</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
 
+        <div class="right_navbar">
+            <a href="#" class="like">
+                <i class="far fa-heart"></i>
+                <span>0</span>
+            </a>
+            <a href="#" class="cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="number_of_items" >0</span> 
+                <span id="total_cart" >$0</span>     
+            </a>
+
+            <div class="modal">
+                <div class="modal_container">
+                    <span class="close">&times;</span>
+                    <h1>Tu Carrito</h1>
+                    <hr>
+                    <input type="number">
+                    <i class="fa-solid fa-trash"></i>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <!-- <section id="search_banner">
+        <img src="./images/02_coffee-beans.png" class="scroll_01" alt="cup_coffee">
+        <img src="./images/01_cake.png" class="scroll_02" alt="brownie">
+    </section> -->
+
+    <!-- Popular Product -->
+    <section id="popular_product">
+
+        <div class="product_heading">
+            <h3>Popular Product</h3>
+            <span class="todos">Todos</span>
+            <span onclick="filterProducts(bakery)" class="comer">Para Comer</span>
+            <span onclick="filterProducts(coffee)" class="tomar">Para Tomar</span>
+            
+            
+        </div>
+
+        <div id="cards_container" class="product_container">
+
+        </div>
+
+    </section>
 </body>
 </html>
