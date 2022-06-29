@@ -85,21 +85,7 @@ body{
             font-weight: 500;
             background-color: #A67246;
         }
-        #total_cart{
-            position: absolute;
-            top: 1px;
-            right: -130px;
-            width: 110px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10%;
-            color: #ffffff;
-            font-size: 1rem;
-            font-weight: 700;
-            background-color: #A67246;
-        }
+       
     }
     .like{
         background-color: #D9D6D2;
@@ -117,33 +103,63 @@ body{
 .modal{
     display: none;
     position: fixed;
-    right: 0;
-    top: 0;
+    right: 10px;
+    top: 10px;
     width: 300px;
     height: 300px;
     overflow: auto;
     background-color: #D9D6D2;
+    border-radius: 10%;
     z-index: 100;
-}
-
-.modal_container{
-    width: 80%;
-    max-width: 60rem;
-    background-color: white;
-    margin: 15% auto;
-    padding: 2rem;
-    border: 1px solid #777;
-    text-align: center;
-    animation: slide ease .8s;
-}
-
-@keyframes slide {
-    from {
-        transform: translateX(-30);
-    } to {
-        transform: translateX(0);
+    animation: slide ease 1s;
+    h1{
+        text-align: center;
     }
+    .quantity{
+       margin-left: 80px;
+    }
+    #trash{
+        margin-top: 0px;
+        margin-left: 270px;
+        font-size: 20px;
+        color: black;
+    }
+
+    .closeCart{
+        margin-top: 15px;
+        margin-left: 250px;
+        font-size: 25px;
+        color: black;
+    }
+
+    #total_cart{
+        // position: absolute;
+        margin-left: 90px;
+        top: 1px;
+        right: -130px;
+        width: 110px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10%;
+        color: #ffffff;
+        font-size: 1rem;
+        font-weight: 700;
+        background-color: #A67246;
+    }
+    
 }
+
+
+
+// @keyframes slide {
+//     0% {
+//         transform: translateX(-100);
+//     } 100% {
+//         transform: translateX(0);
+//     }
+// }
 
 #search_banner{
     max-width: 1250px;

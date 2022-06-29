@@ -32,18 +32,23 @@
             <a href="#" class="cart">
                 <i class="fas fa-shopping-cart"></i>
                 <span id="number_of_items" >0</span> 
-                <span id="total_cart" >$0</span>     
+                    
             </a>
 
             <div class="modal">
-                <div class="modal_container">
-                    <span class="close">&times;</span>
+                    <a href="#" class="closeCart">
+                        <i class="fa-solid fa-xmark"></i>
+                    </a>
+                    
                     <h1>Tu Carrito</h1>
                     <hr>
-                    <input type="number">
-                    <i class="fa-solid fa-trash"></i>
+                    <input class="quantity" type="number">
+                    <a href="#" class="cleanCartShop">
+                        <i id="trash" class="fa-solid fa-trash"></i>
+                    </a>
+                    
                     <hr>
-                </div>
+                    <span id="total_cart" >$0</span> 
             </div>
         </div>
     </nav>
@@ -59,9 +64,9 @@
 
         <div class="product_heading">
             <h3>Popular Product</h3>
-            <span class="todos">Todos</span>
-            <span onclick="filterProducts(bakery)" class="comer">Para Comer</span>
-            <span onclick="filterProducts(coffee)" class="tomar">Para Tomar</span>
+            <span onclick="filterProducts('category')" class="allProducts">Todos</span>
+            <span onclick="filterProducts('bakery')" class="comer">Para Comer</span>
+            <span onclick="filterProducts('coffee')" class="tomar">Para Tomar</span>
             
             
         </div>

@@ -1,5 +1,5 @@
 //Array vacio - Carrito
-const cart = [];
+let cart = [];
 
 //Array productos 
 const products = [
@@ -9,7 +9,8 @@ const products = [
         size: 'Grande',  
         price: 400,
         category: 'coffee', 
-        instock: true
+        instock: true,
+        images: './images/06_coffee.jpeg'
     },
     {
         id:02, 
@@ -17,7 +18,8 @@ const products = [
         size: 'Mediano',  
         price: 500,
         category: 'bakery', 
-        instock: true
+        instock: true,
+        images: './images/07_cheeseckaFR.jpeg'
     },
     {
         id:03, 
@@ -25,7 +27,8 @@ const products = [
         size: 'Mediano',  
         price: 300,
         category: 'bakery', 
-        instock: false
+        instock: false,
+        images: './images/05_Cookies de Chocolate.jpeg'
     },
     {
         id:04, 
@@ -33,7 +36,8 @@ const products = [
         size: 'Mediano',  
         price: 350,
         category: 'coffee', 
-        instock: false
+        instock: false,
+        images: './images/08_teaDeLimon.jpeg'
     },
     {
         id:05, 
@@ -41,7 +45,8 @@ const products = [
         size: 'Mediano',  
         price: 450,
         category: 'bakery', 
-        instock: true
+        instock: true,
+        images: './images/09_brownie.jpeg'
     },
     {
         id:06, 
@@ -49,7 +54,8 @@ const products = [
         size: 'Mediano',  
         price: 450,
         category: 'bakery', 
-        instock: true
+        instock: true,
+        images: './images/10_tiramisu.jpeg'
     },
     {
         id:07, 
@@ -57,7 +63,8 @@ const products = [
         size: 'Grande',  
         price: 400,
         category: 'coffee', 
-        instock: true
+        instock: true,
+        images: './images/11_hot_chocolate.jpeg'
     },
     {
         id:08, 
@@ -65,7 +72,8 @@ const products = [
         size: 'Mediano',  
         price: 600,
         category: 'bakery', 
-        instock: false
+        instock: false,
+        images: './images/12_red velvet.jpeg'
     },
     {
         id:09, 
@@ -73,16 +81,51 @@ const products = [
         size: 'Mediano',  
         price: 300,
         category: 'bakery', 
-        instock: true
+        instock: true,
+        images: './images/13_Muffins_chocolate.jpeg'
     },
 ];
 
 
+
+//Función para AGREGAR los productos del carrito y sumar TOTAL
+function addingToCart(idProduct) {
+    const indexFound = products.find((product) => product.id == idProduct);
+    cart.push(indexFound);
+    const totalCart = cart.reduce((collector, products) => collector + products.price, 0)
+    document.getElementById('number_of_items').innerHTML = cart.length;
+    document.getElementById('total_cart').innerHTML = `Total $${totalCart}`;
+    console.log(cart)
+};
+
+
+
+//Muestra todo los productos en el inicio
+createCards(products);
+
+//Filtra por todos los productos
+const allProducts = document.querySelector('.allProducts');
+allProducts.addEventListener("click", showAllProducts)
+
+function showAllProducts() {
+    createCards(products);
+} 
+
+
+//Filtrar por categorias
+
+function filterProducts(category){
+    const categoryFilter = products.filter((product) => product.category == category);
+    createCards(categoryFilter);
+}
+
+
 //Visualizacion de HTML - acumulador - Generador de Cards
-let collector = ``;
-products.forEach((products) => {
+function createCards(arrayProducts){
+    let collector = ``;
+    arrayProducts.forEach((products) => {
         collector += ` <div class="product-box">
-        <img src="./images/06_coffee.jpeg" alt="">
+        <img src="${products.images}" alt="">
         <strong>${products.description}</strong>
         <span class="quantity">Tamaño ${products.size}</span>
         <span class="price">$${products.price}</span>
@@ -99,30 +142,49 @@ products.forEach((products) => {
 //<i class="far fa-heart" id="heart_off" ></i>
 
 document.getElementById('cards_container').innerHTML = collector;
-
-//Función para AGREGAR los productos del carrito y sumar TOTAL
-function addingToCart(idProduct) {
-    const indexFound = products.find((product) => product.id == idProduct);
-    cart.push(indexFound);
-    const totalCart = cart.reduce((collector, products) => collector + products.price, 0)
-    document.getElementById('number_of_items').innerHTML = cart.length;
-    document.getElementById('total_cart').innerHTML = `Total $${totalCart}`;
-    console.log(cart)
-};
-
-
-//Filtrar por productos
-
-function filterProducts(category){
-   const categoryFilter = products.filter((product) => product.category == category);
-   console.log(categoryFilter);
 }
 
-//Modal
 
-const modal = document.querySelector('.modal'),
-cartIcon = document.querySelector('.cart'),
-close = document.querySelector('.close');
+
+//Abrir y cerrar Modal carrito
+
+const modal = document.querySelector('.modal');
+const openCart = document.querySelector('.cart');
+const closeCart = document.querySelector('.closeCart');
+
+openCart.addEventListener("click", openModal);
+closeCart.addEventListener("click", closeModal);
+
+function openModal(e) {
+    e.preventDefault();
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    modal.style.display = "none";
+}
+
+
+
+//Vaciar carrito de compras
+
+const cleanCart = document.getElementById('trash')
+
+cleanCart.addEventListener("click", deleteProductCart)
+
+function deleteProductCart(idProduct2) {
+    const indexFound2 = cart.find(products => products.id === idProduct2);
+    cart.splice(indexFound2);
+    console.log(cart);
+    const totalCart = cart.reduce((collector, products) => collector + products.price, 0);
+    document.getElementById('total_cart').innerHTML = `Total $${totalCart}`;
+    console.log(`El total a pagar es $${totalCart}.-`);
+}
+
+
+
+
+
 
 
 
