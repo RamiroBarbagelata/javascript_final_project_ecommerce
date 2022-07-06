@@ -293,29 +293,29 @@ body{
             transition: all ease 0.3s;
         }
     }
-    .like-btn{
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        right: 30px;
-        top: 45px;
-        color: #2B4034;
-        background-color: white;
-        border-radius: 50%;
-        font-size: 1.3rem;
-        #heart_off.active{
-            color: orange;
+    // .like-btn{
+    //     position: absolute;
+    //     width: 30px;
+    //     height: 30px;
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    //     right: 30px;
+    //     top: 45px;
+    //     color: #2B4034;
+    //     background-color: white;
+    //     border-radius: 50%;
+    //     font-size: 1.3rem;
+    //     #heart_off.active{
+    //         color: orange;
             
-        }
-        #heart_on{
-            color: gray;
-            &:hover{
-                color: red;
-            }
-        };
+    //     }
+    //     #heart_on{
+    //         color: gray;
+    //         &:hover{
+    //             color: red;
+    //         }
+    //     };
 
-    }
+    // }
 }
