@@ -87,7 +87,7 @@ const products = [
 
 //Local Storage - products in cart
 const cartStorage = localStorage.getItem('cart');
-const cart = JSON.parse(cartStorage) ?? [];
+const cart = JSON.parse(cartStorage) ?? []; //operador nullish coal escing
 
 document.getElementById('number_of_items').innerHTML = cart.length;
 
@@ -97,13 +97,13 @@ document.getElementsByClassName("cart-btn").onclick = () => {
 
 //Function to ADD the products into the cart and add Total to PAY
 function addingToCart(idProduct) {
-    
+
     const indexFound = products.find((product) => product.id == idProduct);
     cart.push(indexFound);
     const cartInJSON = JSON.stringify(cart);
     localStorage.setItem('cart', cartInJSON);
     const totalCart = cart.reduce((collector, products) => collector + products.price, 0)
-    
+    document.getElementById('number_of_items').innerHTML = cart.length;
     document.getElementById('total_cart').innerHTML = `Total $${totalCart}`; 
 };
 
@@ -186,9 +186,7 @@ function deleteProductCart(idProduct2) {
 // Add to favourites
 function addTofavourites(products) {
     let favourites = JSON.parse(localStorage.getItem("favourites"));
-    if(favourites == null) {
-        favourites = [];
-    }
+    favourites = favourites || []; //operador lógico OR
     favourites.push(products);
     localStorage.setItem("favourites", JSON.stringify(favourites));
     document.getElementById('numberFavourites').innerHTML = favourites.length;
@@ -199,10 +197,8 @@ document.getElementById("favouritesButton").addEventListener("click", seeFavouri
 
 function seeFavourites(){
     let favourites = JSON.parse(localStorage.getItem("favourites"));
-    if(favourites == null) {
-        favourites = [];
-    }
-    createCards(favourites);
+    favourites = favourites || []; //operador lógico OR
+    createCards(favourites); 
 }
 
 document.getElementById("home").addEventListener("click", () => {
