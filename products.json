@@ -1,0 +1,83 @@
+[
+    {
+        "id": 1, 
+        "description": "Latte de Caramelo",
+        "size":"Grande",  
+        "price": 400,
+        "category": "coffee", 
+        "instock": true,
+        "images": "./images/06_coffee.jpeg"
+    },
+    {
+        "id": 2, 
+        "description": "Cheesecake Frutos Rojos",
+        "size": "Mediano",  
+        "price": 500,
+        "category": "bakery", 
+        "instock": true,
+        "images": "./images/07_cheeseckaFR.jpeg"
+    },
+    {
+        "id": 3, 
+        "description": "Cookies de Chocolate",
+        "size": "Mediano",  
+        "price": 300,
+        "category": "bakery", 
+        "instock": false,
+        "images": "./images/05_Cookies de Chocolate.jpeg"
+    },
+    {
+        "id": 4, 
+        "description": "Té de Limón",
+        "size": "Mediano",  
+        "price": 350,
+        "category": "coffee", 
+        "instock": false,
+        "images": "./images/08_teaDeLimon.jpeg"
+    },
+    {
+        "id": 5, 
+        "description": "Brownies",
+        "size": "Mediano",  
+        "price": 450,
+        "category": "bakery", 
+        "instock": true,
+        "images": "./images/09_brownie.jpeg"
+    },
+    {
+        "id": 6, 
+        "description": "Tiramisu",
+        "size": "Mediano",  
+        "price": 450,
+        "category": "bakery", 
+        "instock": true,
+        "images": "./images/10_tiramisu.jpeg"
+    },
+    {
+        "id": 7, 
+        "description": "Chocolate Caliente",
+        "size": "Grande",  
+        "price": 400,
+        "category": "coffee", 
+        "instock": true,
+        "images": "./images/11_hot_chocolate.jpeg"
+    },
+    {
+        "id": 8, 
+        "description": "Red Velvet",
+        "size": "Mediano",  
+        "price": 600,
+        "category": "bakery", 
+        "instock": false,
+        "images": "./images/12_red velvet.jpeg"
+    },
+    {
+        "id": 9, 
+        "description": "Muffins de Chocolate",
+        "size": "Mediano",  
+        "price": 300,
+        "category": "bakery", 
+        "instock": true,
+        "images": "./images/13_Muffins_chocolate.jpeg"
+    }
+]

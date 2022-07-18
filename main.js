@@ -1,89 +1,46 @@
-//Empty Array - Shopping Cart
+//Use Local Json
+let products;
 
-//Products Array 
-const products = [
-    {
-        id:01, 
-        description: 'Latte de Caramelo',
-        size: 'Grande',  
-        price: 400,
-        category: 'coffee', 
-        instock: true,
-        images: './images/06_coffee.jpeg'
-    },
-    {
-        id:02, 
-        description: 'Cheesecake Frutos Rojos',
-        size: 'Mediano',  
-        price: 500,
-        category: 'bakery', 
-        instock: true,
-        images: './images/07_cheeseckaFR.jpeg'
-    },
-    {
-        id:03, 
-        description: 'Cookies de Chocolate',
-        size: 'Mediano',  
-        price: 300,
-        category: 'bakery', 
-        instock: false,
-        images: './images/05_Cookies de Chocolate.jpeg'
-    },
-    {
-        id:04, 
-        description: 'Té de Limón',
-        size: 'Mediano',  
-        price: 350,
-        category: 'coffee', 
-        instock: false,
-        images: './images/08_teaDeLimon.jpeg'
-    },
-    {
-        id:05, 
-        description: 'Brownies',
-        size: 'Mediano',  
-        price: 450,
-        category: 'bakery', 
-        instock: true,
-        images: './images/09_brownie.jpeg'
-    },
-    {
-        id:06, 
-        description: 'Tiramisu',
-        size: 'Mediano',  
-        price: 450,
-        category: 'bakery', 
-        instock: true,
-        images: './images/10_tiramisu.jpeg'
-    },
-    {
-        id:07, 
-        description: 'Chocolate Caliente',
-        size: 'Grande',  
-        price: 400,
-        category: 'coffee', 
-        instock: true,
-        images: './images/11_hot_chocolate.jpeg'
-    },
-    {
-        id:08, 
-        description: 'Red Velvet',
-        size: 'Mediano',  
-        price: 600,
-        category: 'bakery', 
-        instock: false,
-        images: './images/12_red velvet.jpeg'
-    },
-    {
-        id:09, 
-        description: 'Muffins de Chocolate',
-        size: 'Mediano',  
-        price: 300,
-        category: 'bakery', 
-        instock: true,
-        images: './images/13_Muffins_chocolate.jpeg'
-    },
-];
+const getProducts = () => {
+    fetch('./products.json')
+    .then((response) => response.json())
+    .then((data) => {
+        products = data;
+        createCards(products)
+    })
+}
+
+//HTML visualisation - Collector - Card Generator
+function createCards(arrayProducts){
+    let collector = ``;
+    arrayProducts.forEach((product) => {
+        const {images, description, size, price, id} = product;
+        collector += ` <div class="product-box">
+        <img src="${images}" alt="">
+        <strong>${description}</strong>
+        <span class="quantity">Tamaño ${size}</span>
+        <span class="price">$${price}</span>
+        <a onclick="addingToCart(${id})" href="#" class="cart-btn">
+            <i class="fas fa-shopping-bag"></i>Agregar al Carrito
+        </a>
+        <a id="like_btn" href="#" class="like-btn">
+            <i class="fa-solid fa-heart" id="heart_on"></i>
+        </a> 
+        </div>`
+});
+document.getElementById('cards_container').innerHTML = collector;
+// Add to favourites
+const likeProduct = document.getElementById('like_btn');
+        likeProduct.addEventListener("click", () => {
+            addTofavourites(products)
+        });
+}
+
+//Calling function that fetches the data
+getProducts();
+
+//Show all products at the start
+createCards(products);
 
 //Local Storage - products in cart
 const cartStorage = localStorage.getItem('cart');
@@ -112,12 +69,9 @@ function addingToCart(idProduct) {
         iconColor: '#2B4034',
         confirmButtonText: 'Genial',
         confirmButtonColor: '#A67246',
-      });
+    });
 };
 
-
-//Show all products at the start
-createCards(products);
 
 //Filter by all products
 const allProducts = document.querySelector('.allProducts');
@@ -132,32 +86,6 @@ function showAllProducts() {
 function filterProducts(category){
     const categoryFilter = products.filter((product) => product.category == category);
     createCards(categoryFilter);
-}
-
-
-//HTML visualisation - Collector - Card Generator
-function createCards(arrayProducts){
-    let collector = ``;
-    arrayProducts.forEach((products) => {
-        collector += ` <div class="product-box">
-        <img src="${products.images}" alt="">
-        <strong>${products.description}</strong>
-        <span class="quantity">Tamaño ${products.size}</span>
-        <span class="price">$${products.price}</span>
-        <a onclick="addingToCart(${products.id})" href="#" class="cart-btn">
-            <i class="fas fa-shopping-bag"></i>Agregar al Carrito
-        </a>
-        <a id="like_btn" href="#" class="like-btn">
-            <i class="fa-solid fa-heart" id="heart_on"></i>
-        </a> 
-        </div>`
-});
-document.getElementById('cards_container').innerHTML = collector;
-// Add to favourites
-const likeProduct = document.getElementById('like_btn');
-        likeProduct.addEventListener("click", () => {
-            addTofavourites(products)
-        });
 }
 
 
