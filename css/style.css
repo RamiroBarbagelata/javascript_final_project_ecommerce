@@ -27,7 +27,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 35px;
   max-width: 1070px;
   width: 100%;
   margin: auto; }
@@ -49,11 +48,8 @@ body {
     -webkit-transition: all ease 0.3s;
     transition: all ease 0.3s; }
 
-.logo {
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #2B4034; }
+.logo_carasur {
+  max-width: 200px; }
 
 .right_navbar {
   display: grid;
@@ -195,7 +191,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   max-width: 1000px;
-  margin: 80px auto; }
+  margin: 100px auto; }
 
 .product_heading {
   display: -webkit-box;
@@ -209,7 +205,7 @@ body {
           align-items: center; }
   .product_heading h3 {
     font-size: 1.56rem;
-    font-weight: 700;
+    font-weight: 900;
     color: #2B4034;
     letter-spacing: 0.5px; }
   .product_heading span {
@@ -226,7 +222,7 @@ body {
 
 .product-box {
   width: 100%;
-  background-color: #D9D6D2;
+  background-color: #efefef;
   padding: 20px;
   border-radius: 20px;
   display: -webkit-box;
@@ -320,5 +316,29 @@ body {
       color: gray; }
       .product-box .like-btn #heart_on:hover {
         color: red; }
+
+.welcome {
+  margin-left: 2%;
+  padding: 10px;
+  font-size: 20px; }
+
+.bio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.nosotrosBio {
+  margin-top: 60px;
+  padding-left: 40px;
+  padding-right: 400px;
+  font-size: 18px;
+  text-align: left; }
+
+.coffee_shop {
+  margin-top: 20px;
+  margin-left: 2%;
+  max-width: 25%;
+  max-height: 25%;
+  border-radius: 20px; }
 
 /*# sourceMappingURL=style.css.map */

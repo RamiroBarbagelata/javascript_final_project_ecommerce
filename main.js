@@ -1,6 +1,12 @@
 //Use Local Json
 let products;
 
+//Local Storage - products in cart
+const cartStorage = localStorage.getItem('cart');
+const cart = JSON.parse(cartStorage) ?? []; //operador nullish coal escing
+
+document.getElementById('number_of_items').innerHTML = cart.length;
+
 const getProducts = () => {
     fetch('./products.json')
     .then((response) => response.json())
@@ -9,6 +15,7 @@ const getProducts = () => {
         createCards(products)
     })
 }
+
 
 //HTML visualisation - Collector - Card Generator
 function createCards(arrayProducts){
@@ -42,11 +49,6 @@ getProducts();
 //Show all products at the start
 createCards(products);
 
-//Local Storage - products in cart
-const cartStorage = localStorage.getItem('cart');
-const cart = JSON.parse(cartStorage) ?? []; //operador nullish coal escing
-
-document.getElementById('number_of_items').innerHTML = cart.length;
 
 document.getElementsByClassName("cart-btn").onclick = () => {
     addingToCart(products)
@@ -66,7 +68,6 @@ function addingToCart(idProduct) {
         title: '¡Felicitaciones!',
         text: 'Agregaste un producto al carrito',
         icon: 'success',
-        iconColor: '#2B4034',
         confirmButtonText: 'Genial',
         confirmButtonColor: '#A67246',
     });

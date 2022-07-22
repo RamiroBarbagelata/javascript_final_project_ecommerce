@@ -27,7 +27,6 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 35px;
     max-width: 1070px;
     width: 100%;
     margin: auto;
@@ -51,11 +50,15 @@ body{
     }
 }
 
-.logo{
-    font-size: 1.4rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: #2B4034;
+// .logo{
+//     font-size: 1.4rem;
+//     font-weight: 600;
+//     letter-spacing: 1px;
+//     color: #2B4034;
+// }
+
+.logo_carasur{
+    max-width: 200px;
 }
 
 .right_navbar{
@@ -98,7 +101,6 @@ body{
 }
 
 // Cart Modal
-
 .modal{
     display: none;
     position: fixed;
@@ -115,7 +117,7 @@ body{
         text-align: center;
     }
     .quantity{
-       margin-left: 80px;
+    margin-left: 80px;
     }
     #trash{
         margin-top: 0px;
@@ -198,12 +200,11 @@ body{
 }
 
 // Popular Product
-
 #popular_product{
     display: flex;
     flex-direction: column;
     max-width: 1000px;
-    margin: 80px auto;
+    margin: 100px auto;
 }
 
 .product_heading{
@@ -212,7 +213,7 @@ body{
     align-items: center;
     h3{
         font-size: 1.56rem;
-        font-weight: 700;
+        font-weight: 900;
         color: #2B4034;
         letter-spacing: 0.5px;
     }
@@ -234,7 +235,7 @@ body{
 .product-box{
     width: 100%;
     // border: 1px solid black;
-    background-color: #D9D6D2;
+    background-color: #efefef;
     padding: 20px;
     border-radius: 20px;
     display: flex;
@@ -292,29 +293,55 @@ body{
             transition: all ease 0.3s;
         }
     }
-    // .like-btn{
-    //     position: absolute;
-    //     width: 30px;
-    //     height: 30px;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    //     right: 30px;
-    //     top: 45px;
-    //     color: #2B4034;
-    //     background-color: white;
-    //     border-radius: 50%;
-    //     font-size: 1.3rem;
-    //     #heart_off.active{
-    //         color: orange;
+    .like-btn{
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 30px;
+        top: 45px;
+        color: #2B4034;
+        background-color: white;
+        border-radius: 50%;
+        font-size: 1.3rem;
+        #heart_off.active{
+            color: orange;
             
-    //     }
-    //     #heart_on{
-    //         color: gray;
-    //         &:hover{
-    //             color: red;
-    //         }
-    //     };
+        }
+        #heart_on{
+            color: gray;
+            &:hover{
+                color: red;
+            }
+        };
 
-    // }
+    }
+}
+
+.welcome{
+    margin-left: 2%;
+    padding: 10px;
+    font-size: 20px;
+}
+.bio{
+    display: flex;
+    
+}
+
+.nosotrosBio{
+    margin-top: 60px;
+    padding-left: 40px;
+    padding-right: 400px;
+    font-size: 18px;
+    text-align: left;
+}
+
+.coffee_shop{
+    margin-top: 20px;
+    margin-left: 2%;
+    max-width: 25%;
+    max-height: 25%;
+    border-radius: 20px;
 }
