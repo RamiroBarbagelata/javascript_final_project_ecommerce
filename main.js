@@ -30,24 +30,27 @@ function createCards(arrayProducts){
         <a onclick="addingToCart(${id})" href="#" class="cart-btn">
             <i class="fas fa-shopping-bag"></i>Agregar al Carrito
         </a>
-        <a id="like_btn" href="#" class="like-btn">
+        <a id="likeBtn" href="#" class="like-btn">
             <i class="fa-solid fa-heart" id="heart_on"></i>
         </a> 
-        </div>`
-});
+        </div>`;
+    })
 document.getElementById('cards_container').innerHTML = collector;
+
 // Add to favourites
-const likeProduct = document.getElementById('like_btn');
-        likeProduct.addEventListener("click", () => {
-            addTofavourites(products)
-        });
+const likeProduct = document.getElementById('likeBtn');
+likeProduct.addEventListener("click", () => {
+    addTofavourites(products)
+    });
 }
+
+
 
 //Calling function that fetches the data
 getProducts();
 
 //Show all products at the start
-createCards(products);
+// createCards(products);
 
 
 document.getElementsByClassName("cart-btn").onclick = () => {
@@ -117,8 +120,9 @@ function deleteProductCart(idProduct2) {
     cart.splice(indexFound2);
     const totalCart = cart.reduce((collector, products) => collector + products.price, 0);
     document.getElementById('total_cart').innerHTML = `Total $${totalCart}`;
+    document.getElementById('number_of_items').innerHTML = cart.length;
     Swal.fire({
-        title: '¿Estás seguro de vaciar el carrito',
+        title: '¿Estás seguro de vaciar el carrito?',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Si, estoy seguro',
@@ -160,15 +164,6 @@ document.getElementById("home").addEventListener("click", () => {
 });
 
 createCards(products);
-
-
-
-
-
-
-
-
-
 
 
 
