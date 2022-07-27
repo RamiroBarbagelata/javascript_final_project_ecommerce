@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Casa de Té</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,200;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,200;1,400&display=swap"
+        rel="stylesheet">
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="sweetalert2.all.min.js"></script>
     <script defer src="./main.js"></script>
@@ -19,15 +23,13 @@
     <!-- Navbar Section  -->
     <nav class="navbar">
         <a href="./index.html">
-            <img src="./images/cara sur.png"  class="logo_carasur" alt="logo">
+            <img src="./images/cara sur.png" class="logo_carasur" alt="logo">
         </a>
-
         <ul class="menu">
             <li><a href="./index.html" id="home">Home</a></li>
             <li><a href="./about.html">Nosotros</a></li>
             <li><a href="./contact.html">Contacto</a></li>
         </ul>
-
         <div class="right_navbar">
             <a href="#" class="like">
                 <i id="favouritesButton" class="far fa-heart"></i>
@@ -35,27 +37,56 @@
             </a>
             <a href="#" class="cart">
                 <i class="fas fa-shopping-cart"></i>
-                <span id="number_of_items" >0</span> 
-                    
+                <span id="number_of_items">0</span>
             </a>
-
             <div class="modal">
-                    <a href="#" class="closeCart">
-                        <i class="fa-solid fa-xmark"></i>
-                    </a>
-                    
-                    <h1>Tu Carrito</h1>
-                    <hr>
-                    <input class="quantity" type="number">
-                    <a href="#" class="cleanCartShop">
-                        <i id="trash" class="fa-solid fa-trash"></i>
-                    </a>
-                    
-                    <hr>
-                    <span id="total_cart" >$0</span> 
+                <a href="#" class="closeCart">
+                    <i class="fa-solid fa-xmark"></i>
+                </a>
+                <h1>Tu Carrito</h1>
+                <hr>
+                <input class="quantity" type="number">
+                <a href="#" class="cleanCartShop">
+                    <i id="trash" class="fa-solid fa-trash"></i>
+                </a>
+                <hr>
+                <span id="total_cart">$0</span>
             </div>
         </div>
     </nav>
 
+    <div class="containerForm">
+        <div class="contact">
+            <h2>Contacto</h2>
+            <form action="#">
+                <div class="input-box">
+                    <input type="text" placeholder="Nombre" id="name" required>
+                    <input type="email" placeholder="Correo electrónico" required><br>
+                    <input type="tel" placeholder="Teléfono"required>
+                    <input type="text" placeholder="Asunto" required><br>
+                    <div class="div_message">
+                        <input type="text" placeholder="Mensaje" class="message" required>
+                    </div>
+                    <div class="button-send" id="sendButton" onclick="sendForm()">
+                        <input type="submit" value="Enviar">
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    <footer>
+        <h6>©2022</h6>
+        <span class="phone">
+            <i class="fa-brands fa-whatsapp"> +54 11 9829 2121</i>
+        </span>
+        <h4></h4>
+        <span class="social">
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.tiktok.com/"><i class="fa-brands fa-tiktok"></i></a>
+        </span>
+    </footer>
 </body>
 </html>
