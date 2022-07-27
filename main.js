@@ -17,7 +17,6 @@ const getProducts = () => {
 function createCards(arrayProducts) {
     const container = document.getElementById('cards_container');
     container.innerHTML = '';
-    let collector = ``;
     arrayProducts.forEach((product) => {
         const { images, description, size, price, id } = product;
         const card = document.createElement('div');

@@ -355,7 +355,14 @@ body {
 .nosotrosBio {
   margin-top: 60px;
   padding-left: 40px;
-  padding-right: 400px;
+  padding-right: 150px;
+  font-size: 18px;
+  text-align: left; }
+
+.nosotrosBioDos {
+  margin-top: 30px;
+  padding-left: 40px;
+  padding-right: 150px;
   font-size: 18px;
   text-align: left; }
 
